@@ -1,0 +1,33 @@
+{
+  "name": "braunstetter/plugin-bundle",
+  "type": "symfony-bundle",
+  "description": "An easy way to implement plugin systems in your symfony projects.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Slowwie",
+      "email": "michaelbrauner82@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "symfony/framework-bundle": "^4.4|^5.0",
+    "symfony/yaml": "5.3.*",
+    "symfony/options-resolver": "^5.3",
+    "symfony/string": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Braunstetter\\PluginBundle\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Braunstetter\\PluginBundle\\Test\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "symfony/test-pack": "^1.0"
+  }
+}
