@@ -3,7 +3,6 @@
 
 namespace Braunstetter\PluginBundle\Routes;
 
-use JetBrains\PhpStorm\Pure;
 use Braunstetter\PluginBundle\Events\RegisterCpRoutesEvent;
 use Braunstetter\PluginBundle\Events\Events;
 use RuntimeException;
@@ -25,7 +24,7 @@ abstract class Loader extends BaseLoader
      * @param string|null $env
      * @param EventDispatcherInterface $eventDispatcher
      */
-    #[Pure] public function __construct(string $env = null, EventDispatcherInterface $eventDispatcher)
+    public function __construct(string $env = null, EventDispatcherInterface $eventDispatcher)
     {
         parent::__construct($env);
         $this->eventDispatcher = $eventDispatcher;
@@ -63,7 +62,7 @@ abstract class Loader extends BaseLoader
      */
     private function loadRoutingFile(RouteCollection $collection): void
     {
-        $importedRoutes = $this->import(static::resource(), $this->type);
+        $importedRoutes = $this->import($this->resource(), $this->type);
         $collection->addCollection($importedRoutes);
 
         $this->isLoaded = true;

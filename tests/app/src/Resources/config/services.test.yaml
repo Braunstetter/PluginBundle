@@ -1,0 +1,5 @@
+services:
+  Braunstetter\PluginBundle\Services\Plugins:
+    arguments:
+      - !tagged_iterator plugin
+    public: true
